@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('content')
 <div class="container" id="app">
+<alert type="success" >
+  <strong>Well Done!</strong>
+  You successfully read this important alert message.
+</alert>
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h1 class="text-center">Listas de Clientes</h1>

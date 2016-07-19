@@ -17,9 +17,7 @@ const paths = {
 //Tareas
 elixir(function(mix) {
     mix.copy(paths.modules+'bootstrap/dist/css/*.min.css', paths.vendor.css+'bootstrap.css')
-       .copy(paths.modules+'vue/dist/*.min.js', paths.vendor.js+'vue.js')
-       .copy(paths.modules+'vue-resource/dist/*.min.js', paths.vendor.js+'vueresource.js')
-       .copy(paths.modules+'vue-strap/dist/*.min.js', paths.vendor.js+'vuestrap.js')
+       .copy(paths.modules+'vue-strap/src/**/*.*', 'resources/assets/js/components')
        .sass('app.sass')
        .browserify('app.js',paths.src.js+'app.js')
 	   .browserSync({
