@@ -85,10 +85,17 @@
             </div>
         </div>
     </nav>
-
-    @yield('content')
-
+    {{-- Mensajes de alerta de vue --}}
+    <div class="container" id="app">
+        <alert type="success" :duration="3000" :show.sync="showModal" width="400px" placement="top" dismissable>
+          <strong v-show="response.title">@{{ response.title }}</strong>
+          @{{ response.message }}
+        </alert>
+        @yield('content')
+    </div>
     <!-- JavaScripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     {{ HTML::script('js/app.js') }}
 </body>
 </html>

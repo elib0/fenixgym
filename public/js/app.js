@@ -11852,17 +11852,23 @@ _vue2.default.use(_vueResource2.default);
 //Vue Strap
 
 
-var vm = new _vue2.default({
+var app = new _vue2.default({
 
 	el: "#app",
 	components: {
 		alert: _Alert2.default
 	},
+	data: {
+		showModal: false,
+		response: { message: null, title: null }
+	},
 	ready: function ready() {
-		console.log('Esto es VUe');
+		console.log('Aplicacion lista Laravel + Vue!');
 	}
 
 });
+
+window.vm = app;
 
 },{"./components/Alert.vue":7,"vue":4,"vue-resource":3}],7:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
