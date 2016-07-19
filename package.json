@@ -5,9 +5,14 @@
     "dev": "gulp watch"
   },
   "devDependencies": {
+    "aliasify": "^2.0.0",
+    "babel-cli": "^6.10.1",
+    "bootstrap-sass": "^3.0.0",
+    "browserify": "^13.0.1",
     "gulp": "^3.9.1",
     "laravel-elixir": "^5.0.0",
-    "bootstrap-sass": "^3.0.0"
+    "laravel-elixir-vueify": "^1.0.3",
+    "vueify": "^8.7.0"
   },
   "dependencies": {
     "vue": "^1.0.26",
