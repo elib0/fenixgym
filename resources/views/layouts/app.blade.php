@@ -14,16 +14,6 @@
     <!-- Styles -->
     {{ HTML::style('css/vendor/bootstrap.css') }}
     {{ HTML::style('css/app.css') }}
-
-    <style>
-        body {
-            font-family: 'Lato';
-        }
-
-        .fa-btn {
-            margin-right: 6px;
-        }
-    </style>
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">
@@ -58,8 +48,8 @@
                                 <li><a href="{{ url('/customer/profile') }}">Registrar</a></li>
                             </ul>
                         </li>
-                        <li><a href="{{ url('/login') }}">Registro Control Nutricional</a></li>
-                        <li><a href="{{ url('/login') }}">Factura</a></li>
+                        <li><a href="{{ url('/customer/nutritional_control') }}">Registro Control Nutricional</a></li>
+                        <li><a href="{{ url('/customer/envoice') }}">Factura</a></li>
                         {{-- <li><a href="{{ url('/login') }}">Productos</a></li> --}}
                     </ul>
                 @endif
@@ -73,7 +63,7 @@
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->nombres }} <span class="caret"></span>
+                                {{ Auth::user()->fullName }} <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">

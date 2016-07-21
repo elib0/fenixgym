@@ -7,8 +7,7 @@
             <thead>
                 <tr>
                     <th>cedula</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
+                    <th>Nombre Completo</th>
                     <th>Sexo</th>
                     <th>Telefono</th>
                     <th>Correo Electronico</th>
@@ -17,18 +16,18 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($clientes as $cliente)
+            {{-- {{ dd($customers) }} --}}
+                @foreach ($customers as $customer)
                 <tr>
-                    <td>{{ $cliente->id }}</td>
-                    <td>{{ $cliente->user->nombres }}</td>
-                    <td>{{ $cliente->user->apellidos }}</td>
-                    <td>{{ $cliente->user->sexo }}</td>
-                    <td>{{ $cliente->user->telefono }}</td>
-                    <td>{{ $cliente->user->email }}</td>
-                    <td>{{ $cliente->status }}</td>
+                    <td>{{ $customer->id }}</td>
+                    <td class="text-capitalize">{{ $customer->user->full_name }}</td>
+                    <td>{{ $customer->user->sex }}</td>
+                    <td>{{ $customer->user->telephone }}</td>
+                    <td>{{ $customer->user->email }}</td>
+                    <td>{{ $customer->status }}</td>
                     <td>
                     {{-- boton para editar al cliente --}}
-                        <a href="/customer/profile/{{ $cliente->id }}" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i></a>
+                        <a href="/customer/profile/{{ $customer->id }}" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i></a>
                     </td>
                 </tr>
                 @endforeach

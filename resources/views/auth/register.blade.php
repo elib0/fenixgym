@@ -10,29 +10,29 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('nombres') ? ' has-error' : '' }}">
-                            <label for="nombres" class="col-md-4 control-label">Nombre</label>
+                        <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
+                            <label for="first_name" class="col-md-4 control-label">Nombre</label>
 
                             <div class="col-md-6">
-                                <input id="nombres" type="text" class="form-control" name="nombres" value="{{ old('nombres') }}">
+                                <input id="first_name" type="text" class="form-control" name="first_name" value="{{ old('first_name') }}">
 
-                                @if ($errors->has('nombres'))
+                                @if ($errors->has('first_name'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('nombres') }}</strong>
+                                        <strong>{{ $errors->first('first_name') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('apellidos') ? ' has-error' : '' }}">
-                            <label for="apellidos" class="col-md-4 control-label">Apellido</label>
+                        <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
+                            <label for="last_name" class="col-md-4 control-label">Apellido</label>
 
-                            <div class="col-md-7">
-                                <input id="apellidos" type="text" class="form-control" name="apellidos" value="{{ old('apellidos') }}">
+                            <div class="col-md-6">
+                                <input id="last_name" type="text" class="form-control" name="last_name" value="{{ old('last_name') }}">
 
-                                @if ($errors->has('apellidos'))
+                                @if ($errors->has('last_name'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('apellidos') }}</strong>
+                                        <strong>{{ $errors->first('last_name') }}</strong>
                                     </span>
                                 @endif
                             </div>

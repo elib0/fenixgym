@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ControlNutricional extends Model
+class NutritionalControl extends Model
 {
     //
 }

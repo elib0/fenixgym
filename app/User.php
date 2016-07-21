@@ -16,7 +16,7 @@ class User extends Authenticatable implements HasRoleAndPermissionContract
      * @var array
      */
     protected $fillable = [
-        'nombres','apellidos','fecha_nac','sexo','direccion','telefono','email','password'
+        'first_name','last_name','date_of_birth','sex','address','telephone','email','password'
     ];
 
     /**
@@ -27,4 +27,8 @@ class User extends Authenticatable implements HasRoleAndPermissionContract
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getFullNameAttribute(){
+        return $this->last_name.' '.$this->first_name;
+    }
 }

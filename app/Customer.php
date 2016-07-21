@@ -4,16 +4,17 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cliente extends Model
+class Customer extends Model
 {
     protected $fillable = [
-        'user_id','direc_factura','peso','estatura','enfermedades','observaciones'
+        'user_id','address_envoice','wheigth','height','diseases','observations'
     ];
+    protected $with = ['user'];
     //
     public function getStatusAttribute()
     {
-        $factura=$this->factura->last();
-        return isset($factura) ? $factura->status : 'sin facturar';
+        $invoices=$this->invoices->last();
+        return isset($invoices) ? $invoices->status : 'sin facturar';
     }
 
     public function user()
@@ -23,10 +24,10 @@ class Cliente extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function factura()
+    public function invoices()
     {
         // esta es la relacion de cliente con factura
         //has: cuando la otra tabla (factura) tiene clave foranea de esta tabla (cliente)
-        return $this->hasMany('App\Factura');
+        return $this->hasMany('App\Invoice');
     }
 }

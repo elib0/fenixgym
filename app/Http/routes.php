@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/', 'HomeController@index');//raiz de la ruta
 
@@ -22,6 +22,9 @@ Route::get('/', 'HomeController@index');//raiz de la ruta
 Route::group(['prefix' => 'customer'], function() {
     Route::get('all', 'CustomerController@index'); //ruta  de la raiz
     Route::get('profile/{user_id?}', 'CustomerController@profile');//ruta para  el formulario del usuario editando o nuevo cliente
+    Route::get('envoice', 'CustomerController@envoice');
+    Route::get('nutritional_control', 'CustomerController@nutritional_control');
+    // Route::get('/nutritional_control', 'CustomerController@profileSave');
     Route::post('profile/save', 'CustomerController@profileSave'); //ruta para el boton guardar
 });
 
